@@ -1,0 +1,13 @@
+{
+  "name": "my-first-viem-and-foundry",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node wallet.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2",
+    "viem": "^2.8.18"
+  }
+}
