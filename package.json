@@ -1,9 +1,10 @@
 {
-  "name": "my-first-viem-and-foundry",
+  "name": "my-first-usage-of-viem-and-foundry",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node wallet.js"
+    "create-wallet": "node create-wallet-of-specific-address.js",
+    "send-ether": "node send-ether-on-local-test-network.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

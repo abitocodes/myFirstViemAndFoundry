@@ -1,28 +1,28 @@
-// 예제 코드: 0x1234로 시작하는 지갑 주소를 찾기 위한 스크립트
-
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 
-// 원하는 주소 패턴 설정
+// Set a desired pattern for the address to match.
 const desiredPattern = '0x1234';
 
+// Define a function to find an address that starts with the desired pattern.
 function findDesiredAddress() {
   let found = false;
   let attempts = 0;
 
+  // Keep trying until the desired address is found.
   while (!found) {
-    // 새 개인 키 생성
     const privateKey = generatePrivateKey();
-    // 개인 키로 계정 생성
-    const account = privateKeyToAccount(privateKey);
-    // 생성된 계정의 주소가 원하는 패턴으로 시작하는지 확인
+    const account = privateKeyToAccount(privateKey)
+    // Check if the generated account's address starts with the desired pattern.
     if (account.address.startsWith(desiredPattern)) {
+      // If a match is found, log the success message and the details of the account.
       console.log(`Found a matching address after ${attempts} attempts!`);
       console.log(`Address: ${account.address}`);
       console.log(`Private Key: ${privateKey}`);
       found = true;
     } else {
+      // If the address does not match, increment the attempt counter.
       attempts += 1;
-      // 상태 업데이트를 위해 1000번의 시도마다 로그 출력
+      // Log a message every 1000 attempts to update on the search progress.
       if (attempts % 1000 === 0) {
         console.log(`${attempts} attempts made, still searching...`);
       }
@@ -30,4 +30,5 @@ function findDesiredAddress() {
   }
 }
 
+// Call the function to start the search for a desired address pattern.
 findDesiredAddress();
