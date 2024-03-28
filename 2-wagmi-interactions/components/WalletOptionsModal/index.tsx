@@ -25,17 +25,18 @@ export default function WalletOptionsModal(props: Props) {
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div className="relative w-auto max-w-3xl mx-auto my-6">
           <div className="relative flex flex-col bg-white border-0 rounded-lg shadow-lg">
+            {/* Pop-Up Wallet Options */}
             <div className="flex items-center justify-around p-5 mb-4">
               <MdOutlineAccountBalanceWallet className="flex m-1 text-4xl" />
               <h3 className="text-3xl font-semibold text-left">
                 Choose a Wallet
               </h3>
             </div>
-
+            {/* 지갑 옵션 불러오기 */}
             {connectData.connectors.map((c) => (
               <div key={c.id} className="mb-2 ml-2 mr-2 w-80">
                 <Button
-                  loading={connectDataLoading}
+                  loading={connectDataLoading || false}
                   width={80}
                   disabled={!c.ready}
                   onClick={() => connect(c)}

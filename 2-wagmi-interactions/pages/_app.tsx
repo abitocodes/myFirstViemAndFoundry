@@ -15,17 +15,15 @@ type Connector =
   | WalletLinkConnector;
 
 const connectors = ({ chainId }: { chainId?: number }): Connector[] => {
-  const rpcUrl =
-    chains.find((x) => x.id === chainId)?.rpcUrls?.[0] ??
-    chain.mainnet.rpcUrls[0];
+  const rpcUrl = "https://eth-sepolia.public.blastapi.io";
   return [
     new InjectedConnector({ chains }),
-    new WalletConnectConnector({
-      options: {
-        infuraId: infuraApiKey,
-        qrcode: true,
-      },
-    }),
+    // new WalletConnectConnector({
+    //   options: {
+    //     infuraId: infuraApiKey,
+    //     qrcode: true,
+    //   },
+    // }),
     new WalletLinkConnector({
       options: {
         appName: "NextJS-wagmi",
