@@ -5,3 +5,7 @@ libs = ["lib"]
 
 [profile.default.networks.sepolia]
 rpcUrl = "https://gateway.tenderly.co/public/sepolia"
+
+[profile.default.networks.mumbai]
+rpcUrl = "https://rpc.ankr.com/polygon_mumbai"
+

@@ -2,12 +2,12 @@
 pragma solidity ^0.8.12;
 
 import "forge-std/Script.sol";
-import "../src/Counter.sol";
+import "src/QuickAcaciaToken.sol";
 
-contract DeployCounter is Script {
+contract DeployQuickAcaciaToken is Script {
     function run() external {
         vm.startBroadcast();
-        new Counter();
+        new QuickAcaciaToken();
         vm.stopBroadcast();
     }
 }
